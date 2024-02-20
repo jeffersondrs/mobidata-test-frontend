@@ -37,7 +37,7 @@ export const ufCidadesList = ufCidades.map((uf) => (
 ));
 
 export const usersData: User[] = [
-  { name: "João", city: "São Paulo", active: true },
-  { name: "Maria", city: "Rio de Janeiro", active: false },
-  { name: "José", city: "Belo Horizonte", active: true },
+  { name: "João", city: "São Paulo", active: "Ativo" },
+  { name: "Maria", city: "Rio de Janeiro", active: "Inativo" },
+  { name: "José", city: "Belo Horizonte", active: "Ativo" },
 ];

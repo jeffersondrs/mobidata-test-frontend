@@ -1,9 +1,5 @@
 import React from "react";
-
-type SelectFilterProps = {
-  options: string[];
-  onChange: (value: string) => void;
-};
+import { SelectFilterProps } from "@/types/globalt-types";
 
 const SelectFilter = ({ options, onChange }: SelectFilterProps) => {
   return (

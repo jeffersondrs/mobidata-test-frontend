@@ -32,6 +32,10 @@ export function Form() {
 
   const onSubmit = (data: FormInput) => {
     console.log(data);
+
+    // Aqui você pode fazer a chamada para a API
+
+    // Limpa os campos
   };
 
   return (

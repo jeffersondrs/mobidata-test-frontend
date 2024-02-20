@@ -1,15 +1,8 @@
 "use client";
-import {
-  Modal,
-  Form,
-  Table,
-  Button,
-  SearchForm,
-} from "@/components/";
+import { Modal, Form, Table, Button, SearchForm } from "@/components/";
 import { Plus } from "lucide-react";
 import { useState } from "react";
-import { usersData } from "@/utils/utils";
-import { useFilter } from "@/hooks/SearchUser";
+import { FilterUser } from "@/hooks/FilterUsers";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,7 +11,7 @@ export default function Home() {
     setIsModalOpen(true);
   };
 
-  const { filteredData } = useFilter(usersData);
+  const { filteredData } = FilterUser();
 
   console.log(filteredData);
 

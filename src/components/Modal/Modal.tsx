@@ -1,12 +1,7 @@
 "use client";
 
 import React from "react";
-
-type ModalProps = Readonly<{
-  children: React.ReactElement | React.ReactNode;
-  isOpen: boolean;
-  onClose: () => void;
-}>;
+import { ModalProps } from "@/types/globalt-types";
 
 const Modal = ({ children, isOpen, onClose }: ModalProps) => {
   return (

@@ -1,15 +1,7 @@
 import React from "react";
 import { Button } from "../Form/Button/Button";
+import { UserListProps } from "@/types/globalt-types";
 
-type User = {
-  name: string;
-  city: string;
-  active: boolean;
-};
-
-type UserListProps = {
-  users: User[];
-};
 
 const Table = ({ users }: UserListProps) => {
   return (
@@ -42,7 +34,11 @@ const Table = ({ users }: UserListProps) => {
             <td className="w-40 text-start border p-1 text-xs">{user.name}</td>
             <td className="w-40 text-start border p-1 text-xs">{user.city}</td>
             <td className="w-40 text-start border p-1 text-xs">
-              {user.active ? "Ativo" : "Inativo"}
+              {user.active === "ativo" ? (
+                <span className="text-green-600">{user.active}</span>
+              ) : (
+                <span className="text-red-600">{user.active}</span>
+              )}
             </td>
             <td className="w-32 text-center border p-1 flex flex-row justify-center items-center h-full">
               <div className="flex lex-row gap-2">

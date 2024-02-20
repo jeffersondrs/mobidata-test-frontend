@@ -2,15 +2,11 @@ import { useContext } from "react";
 import { Button } from "../Form/Button/Button";
 import { Search } from "lucide-react";
 import { Context } from "@/context/userContext";
+import { SearchFormProps } from "@/types/globalt-types";
 
-type SearchFormProps = {
-  onSubmit: (value: string) => void;
-  value?: string;
-};
-
-const SearchForm = ({ onSubmit, value }: SearchFormProps) => {
+const SearchForm = ({ onSubmit }: SearchFormProps) => {
   const { searchTerm, setSearchTerm } = useContext(Context);
-  console.log(searchTerm);
+
   return (
     <form
       onSubmit={(e) => {
