@@ -1,3 +1,5 @@
+import { FormInput } from "@/utils/schema-zod";
+
 export type User = {
   name: string;
   city: string;
@@ -10,7 +12,7 @@ export interface SearchContext {
 }
 
 export type UserListProps = {
-  users: User[];
+  users: FormInput[];
 };
 
 export type SearchFormProps = {
