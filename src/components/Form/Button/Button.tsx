@@ -11,7 +11,7 @@ type ButtonProps = Readonly<{
 }>;
 
 const Button = ({ children, onClick, disabled, buttonType = "button", styles }: ButtonProps) => {
-  let buttonClass = "bg-blue-500 text-white px-2 rounded-md hover:bg-blue-700";
+  let buttonClass = "bg-blue-500 text-white py-2 px-3 rounded-md hover:bg-blue-700 text-sm";
 
   if (buttonType === "submit") {
     buttonClass = "bg-green-500 text-white px-2 rounded-md hover:bg-green-700";
