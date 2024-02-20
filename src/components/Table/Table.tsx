@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "../Form/Button/Button";
-import { CheckCircle, CheckSquare, Edit, Trash } from "lucide-react";
 
 type User = {
   name: string;

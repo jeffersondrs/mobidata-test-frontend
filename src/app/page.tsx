@@ -1,19 +1,15 @@
 "use client";
-import { Modal, Form, Table, SelectFilter, Button } from "@/components/";
+import {
+  Modal,
+  Form,
+  Table,
+  Button,
+  SearchForm,
+} from "@/components/";
 import { Plus } from "lucide-react";
 import { useState } from "react";
-
-type User = {
-  name: string;
-  city: string;
-  active: boolean;
-};
-
-const usersData: User[] = [
-  { name: "João", city: "São Paulo", active: true },
-  { name: "Maria", city: "Rio de Janeiro", active: false },
-  { name: "José", city: "Belo Horizonte", active: true },
-];
+import { usersData } from "@/utils/utils";
+import { useFilter } from "@/hooks/SearchUser";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,8 +18,12 @@ export default function Home() {
     setIsModalOpen(true);
   };
 
+  const { filteredData } = useFilter(usersData);
+
+  console.log(filteredData);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-10">
+    <main className="flex min-h-screen flex-col items-center justify-start p-10 gap-5">
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <Form />
       </Modal>
@@ -33,11 +33,8 @@ export default function Home() {
           <Plus size={14} />
         </div>
       </Button>
-      <Table users={usersData} />
-      <SelectFilter
-        options={["São Paulo", "Rio de Janeiro", "Belo Horizonte"]}
-        onChange={(value) => console.log(value)}
-      />
+      <SearchForm onSubmit={(value) => console.log(value)} />
+      <Table users={filteredData} />
     </main>
   );
 }
