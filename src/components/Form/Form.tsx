@@ -18,7 +18,7 @@ export function Form() {
           Informações pessoais
         </h1>
         <div className="flex flex-col">
-          <div className="flex flex-row justify-between items-center p-1 text-white text-xs sm:text-sm">
+          <div className="flex flex-row justify-between items-center text-white text-xs sm:text-sm">
             <label htmlFor="name" className="pxx-1">
               Nome completo
             </label>
@@ -35,7 +35,7 @@ export function Form() {
           />
         </div>
         <div className="flex flex-col">
-          <div className="flex flex-row justify-between items-center p-1 text-white text-xs sm:text-sm">
+          <div className="flex flex-row justify-between items-center text-white text-xs sm:text-sm">
             <label htmlFor="email" className="px-1">
               Email
             </label>
@@ -53,7 +53,7 @@ export function Form() {
         </div>
         <div className="flex flex-row justify-center items-center gap-2">
           <div className="flex flex-col w-4/6">
-            <div className="flex flex-row justify-between items-center text-white text-xs sm:text-sm p-1">
+            <div className="flex flex-row justify-between items-center text-white text-xs sm:text-sm">
               <label htmlFor="cpf" className="px-1">
                 CPF
               </label>
@@ -71,7 +71,7 @@ export function Form() {
             />
           </div>
           <div className="flex flex-col w-2/6">
-            <div className="flex flex-row justify-between items-center text-white text-xs sm:text-sm p-1">
+            <div className="flex flex-row justify-between items-center text-white text-xs sm:text-sm">
               <label htmlFor="status" className="px-1">
                 Status
               </label>
@@ -94,11 +94,11 @@ export function Form() {
         </div>
       </div>
       <div>
-        <h1 className="text-xs sm:text-sm font-bold bg-gray-800 text-white p-1 text-center">
+        <h1 className="text-xs sm:text-sm font-bold bg-gray-800 text-white py-1 text-center">
           Endereço
         </h1>
-        <div className="flex flex-row justify-center items-center">
-          <div className="flex flex-col w-4/6 px-1 text-white text-xs sm:text-sm">
+        <div className="flex flex-row justify-center items-center gap-1">
+          <div className="flex flex-col w-4/6  text-white text-xs sm:text-sm">
             <label htmlFor="country" className="px-1">
               País
             </label>
@@ -120,9 +120,9 @@ export function Form() {
               </p>
             )}
           </div>
-          <div className="flex flex-col w-2/6 px-1">
-            <div className="flex flex-row justify-between items-center text-white text-xs sm:text-sm p-1">
-              <label htmlFor="cep">CEP</label>
+          <div className="flex flex-col w-2/6 pl-1">
+            <div className="flex flex-row justify-between items-center text-white text-xs sm:text-sm">
+              <label htmlFor="cep" className="px-1">CEP</label>
               {errors.cep && (
                 <p className="text-orange-500 text-xs">{errors.cep.message}</p>
               )}
@@ -132,13 +132,13 @@ export function Form() {
               {...register("cep")}
               className="rounded-md
               ring-0 outline-none h-7 text-xs sm:text-sm
-            p-2 bg-gray-800 text-white"
+            px-2 bg-gray-800 text-white"
               maxLength={8}
             />
           </div>
         </div>
-        <div className="flex flex-row justify-center items-center">
-          <div className="flex flex-col w-4/6 p-1 text-white text-xs sm:text-sm">
+        <div className="flex flex-row justify-center items-center gap-2">
+          <div className="flex flex-col w-4/6 text-white text-xs sm:text-sm">
             <label htmlFor="city" className="px-1">
               Cidade
             </label>
@@ -153,7 +153,7 @@ export function Form() {
               <p className="text-orange-500 text-xs">{errors.city.message}</p>
             )}
           </div>
-          <div className="flex flex-col w-2/6 p-1 text-white text-xs sm:text-sm">
+          <div className="flex flex-col w-2/6 text-white text-xs sm:text-sm">
             <label htmlFor="state" className="px-1">
               UF
             </label>
@@ -170,7 +170,7 @@ export function Form() {
             )}
           </div>
         </div>
-        <div className="flex flex-col p-1 text-white text-xs sm:text-sm">
+        <div className="flex flex-col text-white text-xs sm:text-sm">
           <label htmlFor="street" className="px-1">
             Rua
           </label>
@@ -185,10 +185,10 @@ export function Form() {
             <p className="text-orange-500 text-xs">{errors.street.message}</p>
           )}
         </div>
-        <div className="flex flex-row items-center justify-center">
-          <div className="flex flex-col w-4/6 p-1">
+        <div className="flex flex-row items-center justify-center gap-2">
+          <div className="flex flex-col w-4/6">
             <div className="flex flex-row justify-between items-center text-white text-xs sm:text-sm p-1">
-              <label htmlFor="neighborhood">Bairxro</label>
+              <label htmlFor="neighborhood">Bairro</label>
               {errors.neighborhood && (
                 <p className="text-orange-500 text-xs">
                   {errors.neighborhood.message}
@@ -203,7 +203,7 @@ export function Form() {
             p-2 bg-gray-800 text-white"
             />
           </div>
-          <div className="flex flex-col w-2/6 px-1 text-white text-xs sm:text-sm">
+          <div className="flex flex-col w-2/6 text-white text-xs sm:text-sm">
             <div className="flex flex-row justify-between items-center p-1">
               <label htmlFor="number">Número</label>
               {errors.number && (
@@ -221,7 +221,7 @@ export function Form() {
             />
           </div>
         </div>
-        <div className="flex flex-col p-1 text-white text-xs sm:text-sm">
+        <div className="flex flex-col text-white text-xs sm:text-sm">
           <label htmlFor="complement" className="px-1">
             Complemento
           </label>

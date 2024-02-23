@@ -4,7 +4,7 @@ import React from "react";
 import { ButtonProps } from "@/types/globalt-types";
 
 const Button = ({ children, onClick, disabled, buttonType = "button", styles }: ButtonProps) => {
-  let buttonClass = "bg-gray-500 text-white p-2 rounded-md hover:bg-blue-700 text-sm";
+  let buttonClass = "bg-gray-500 text-white p-2 rounded-md hover:bg-green-700 text-sm";
 
   switch (buttonType) {
     case "submit":
