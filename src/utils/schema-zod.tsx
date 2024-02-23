@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const FormSchema = z.object({
+  id: z.string(),
   name: z.string().min(3, { message: "Nome é obrigatório" }),
   email: z
     .string()
