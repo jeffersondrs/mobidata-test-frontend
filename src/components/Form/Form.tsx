@@ -4,8 +4,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormSchema, FormInput } from "@/utils/schema-zod";
-import { Button } from "./Button/Button";
 import { ufCidadesList } from "@/utils/utils";
+import { Button } from "@/components/index";
 
 export function Form() {
   const {
@@ -39,62 +39,83 @@ export function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 p-3">
-      <div className="">
-        <h1 className="text-xl font-bold bg-gray-300 p-1 text-center">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="space-y-4 p-5 bg-gray-600"
+    >
+      <div>
+        <h1 className="text-xs sm:text-sm font-bold bg-gray-800 p-1 text-center text-white">
           Informações pessoais
         </h1>
         <div className="flex flex-col">
-          <div className="flex flex-row justify-between items-center p-1">
-            <label htmlFor="name">Nome completo</label>
+          <div className="flex flex-row justify-between items-center p-1 text-white text-xs sm:text-sm">
+            <label htmlFor="name" className="pxx-1">
+              Nome completo
+            </label>
             {errors.name && (
-              <p className="text-red-500 text-xs">{errors.name.message}</p>
+              <p className="text-orange-500 text-xs">{errors.name.message}</p>
             )}
           </div>
           <input
             type="text"
             {...register("name")}
-            className="border border-gray-300 rounded-md p-1"
+            className="rounded-md
+              ring-0 outline-none h-7
+            px-2 bg-gray-800 text-white"
           />
         </div>
         <div className="flex flex-col">
-          <div className="flex flex-row justify-between items-center p-1">
-            <label htmlFor="email">Email</label>
+          <div className="flex flex-row justify-between items-center p-1 text-white text-xs sm:text-sm">
+            <label htmlFor="email" className="px-1">
+              Email
+            </label>
             {errors.email && (
-              <p className="text-red-500 text-xs">{errors.email.message}</p>
+              <p className="text-orange-500 text-xs">{errors.email.message}</p>
             )}
           </div>
           <input
             type="email"
             {...register("email")}
-            className="border border-gray-300 rounded-md p-1"
+            className="rounded-md
+              ring-0 outline-none h-7
+            px-2 bg-gray-800 text-white"
           />
         </div>
-        <div className="flex flex-row gap-2 ">
+        <div className="flex flex-row justify-center items-center gap-2">
           <div className="flex flex-col w-4/6">
-            <div className="flex flex-row justify-between items-center p-1">
-              <label htmlFor="cpf">CPF</label>
+            <div className="flex flex-row justify-between items-center text-white text-xs sm:text-sm p-1">
+              <label htmlFor="cpf" className="px-1">
+                CPF
+              </label>
               {errors.cpf && (
-                <p className="text-red-500 text-xs">{errors.cpf.message}</p>
+                <p className="text-orange-500 text-xs">{errors.cpf.message}</p>
               )}
             </div>
             <input
               type="text"
               {...register("cpf")}
-              className="border border-gray-300 rounded-md p-1"
+              className="rounded-md
+              ring-0 outline-none h-7 text-xs sm:text-sm
+            px-2 bg-gray-800 text-white"
               maxLength={11}
             />
           </div>
           <div className="flex flex-col w-2/6">
-            <div className="flex flex-row justify-between items-center p-1">
-              <label htmlFor="status">Status</label>
+            <div className="flex flex-row justify-between items-center text-white text-xs sm:text-sm p-1">
+              <label htmlFor="status" className="px-1">
+                Status
+              </label>
               {errors.status && (
-                <p className="text-red-500 text-xs">{errors.status.message}</p>
+                <p className="text-orange-500 text-xs">
+                  {errors.status.message}
+                </p>
               )}
             </div>
             <select
               {...register("status")}
-              className="border border-gray-300 rounded-md p-1"
+              className="rounded-md
+              ring-0 outline-none h-7 text-xs sm:text-sm
+            p-1 bg-gray-800 text-white"
             >
               <option value="active">Ativo</option>
               <option value="inactive">Inativo</option>
@@ -102,16 +123,20 @@ export function Form() {
           </div>
         </div>
       </div>
-      <div className="gap-2">
-        <h1 className="text-xl font-bold bg-gray-300 p-1 text-center">
+      <div>
+        <h1 className="text-xs sm:text-sm font-bold bg-gray-800 text-white p-1 text-center">
           Endereço
         </h1>
-        <div className="flex flex-row gap-2">
-          <div className="flex flex-col w-4/6 p-1">
-            <label htmlFor="country">País</label>
+        <div className="flex flex-row justify-center items-center">
+          <div className="flex flex-col w-4/6 px-1 text-white text-xs sm:text-sm">
+            <label htmlFor="country" className="px-1">
+              País
+            </label>
             <select
               {...register("country")}
-              className="border border-gray-300 rounded-md p-1"
+              className="rounded-md
+              ring-0 outline-none h-7
+            p-1 bg-gray-800 text-white"
             >
               <option value="Brasil">Brasil</option>
               <option value="EUA">EUA</option>
@@ -120,66 +145,82 @@ export function Form() {
               <option value="Uruguai">Uruguai</option>
             </select>
             {errors.country && (
-              <p className="text-red-500 text-xs">{errors.country.message}</p>
+              <p className="text-orange-500 text-xs">
+                {errors.country.message}
+              </p>
             )}
           </div>
-          <div className="flex flex-col w-2/6">
-            <div className="flex flex-row justify-between items-center ">
+          <div className="flex flex-col w-2/6 px-1">
+            <div className="flex flex-row justify-between items-center text-white text-xs sm:text-sm p-1">
               <label htmlFor="cep">CEP</label>
               {errors.cep && (
-                <p className="text-red-500 text-xs">{errors.cep.message}</p>
+                <p className="text-orange-500 text-xs">{errors.cep.message}</p>
               )}
             </div>
             <input
               type="text"
               {...register("cep")}
-              className="border border-gray-300 rounded-md p-1"
+              className="rounded-md
+              ring-0 outline-none h-7 text-xs sm:text-sm
+            p-2 bg-gray-800 text-white"
               maxLength={8}
             />
           </div>
         </div>
-        <div className="flex flex-row gap-2">
-          <div className="flex flex-col w-4/6 p-1">
-            <label htmlFor="city">Cidade</label>
+        <div className="flex flex-row justify-center items-center">
+          <div className="flex flex-col w-4/6 p-1 text-white text-xs sm:text-sm">
+            <label htmlFor="city" className="px-1">
+              Cidade
+            </label>
             <input
               type="text"
               {...register("city")}
-              className="border border-gray-300 rounded-md p-1"
+              className="rounded-md
+              ring-0 outline-none h-7 text-xs sm:text-sm
+            p-2 bg-gray-800 text-white"
             />
             {errors.city && (
-              <p className="text-red-500 text-xs">{errors.city.message}</p>
+              <p className="text-orange-500 text-xs">{errors.city.message}</p>
             )}
           </div>
-          <div className="flex flex-col w-2/6 p-1">
-            <label htmlFor="state">UF</label>
+          <div className="flex flex-col w-2/6 p-1 text-white text-xs sm:text-sm">
+            <label htmlFor="state" className="px-1">
+              UF
+            </label>
             <select
               {...register("state")}
-              className="border border-gray-300 rounded-md p-1"
+              className="rounded-md
+              ring-0 outline-none h-7
+            px-1 bg-gray-800 text-white"
             >
               {ufCidadesList}
             </select>
             {errors.state && (
-              <p className="text-red-500 text-xs">{errors.state.message}</p>
+              <p className="text-orange-500 text-xs">{errors.state.message}</p>
             )}
           </div>
         </div>
-        <div className="flex flex-col p-1">
-          <label htmlFor="street">Rua</label>
+        <div className="flex flex-col p-1 text-white text-xs sm:text-sm">
+          <label htmlFor="street" className="px-1">
+            Rua
+          </label>
           <input
             type="text"
             {...register("street")}
-            className="border border-gray-300 rounded-md p-1"
+            className="rounded-md
+              ring-0 outline-none h-7
+            p-2 bg-gray-800 text-white"
           />
           {errors.street && (
-            <p className="text-red-500 text-xs">{errors.street.message}</p>
+            <p className="text-orange-500 text-xs">{errors.street.message}</p>
           )}
         </div>
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-row items-center justify-center">
           <div className="flex flex-col w-4/6 p-1">
-            <div className="flex flex-row justify-between items-center ">
-              <label htmlFor="neighborhood">Bairro</label>
+            <div className="flex flex-row justify-between items-center text-white text-xs sm:text-sm p-1">
+              <label htmlFor="neighborhood">Bairxro</label>
               {errors.neighborhood && (
-                <p className="text-red-500 text-xs">
+                <p className="text-orange-500 text-xs">
                   {errors.neighborhood.message}
                 </p>
               )}
@@ -187,33 +228,44 @@ export function Form() {
             <input
               type="text"
               {...register("neighborhood")}
-              className="border border-gray-300 rounded-md p-1"
+              className="rounded-md
+              ring-0 outline-none h-7 text-xs sm:text-sm
+            p-2 bg-gray-800 text-white"
             />
           </div>
-          <div className="flex flex-col w-2/6 p-1">
-            <div className="flex flex-row justify-between items-center ">
-              <label htmlFor="number">Number</label>
+          <div className="flex flex-col w-2/6 px-1 text-white text-xs sm:text-sm">
+            <div className="flex flex-row justify-between items-center p-1">
+              <label htmlFor="number">Número</label>
               {errors.number && (
-                <p className="text-red-500 text-xs">{errors.number.message}</p>
+                <p className="text-orange-500 text-xs">
+                  {errors.number.message}
+                </p>
               )}
             </div>
             <input
               type="text"
               {...register("number")}
-              className="border border-gray-300 rounded-md p-1"
+              className="rounded-md
+              ring-0 outline-none h-7
+            p-2 bg-gray-800 text-white"
             />
           </div>
         </div>
-
-        <div className="flex flex-col p-1">
-          <label htmlFor="complement">Complemento</label>
+        <div className="flex flex-col p-1 text-white text-xs sm:text-sm">
+          <label htmlFor="complement" className="px-1">
+            Complemento
+          </label>
           <input
             type="text"
             {...register("complement")}
-            className="border border-gray-300 rounded-md p-1"
+            className="rounded-md
+              ring-0 outline-none h-7
+            p-2 bg-gray-800 text-white"
           />
           {errors.complement && (
-            <p className="text-red-500 text-xs">{errors.complement.message}</p>
+            <p className="text-orange-500 text-xs">
+              {errors.complement.message}
+            </p>
           )}
         </div>
       </div>

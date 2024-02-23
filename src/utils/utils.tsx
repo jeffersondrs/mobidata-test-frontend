@@ -38,6 +38,7 @@ export const ufCidadesList = ufCidades.map((uf) => (
 
 export const usersData: FormInput[] = [
   {
+    id: "1",
     name: "João",
     city: "São Paulo",
     status: "Ativo",
@@ -52,6 +53,7 @@ export const usersData: FormInput[] = [
     country: "Brasil",
   },
   {
+    id: "2",
     name: "Maria",
     city: "Rio de Janeiro",
     status: "Ativo",
@@ -66,6 +68,7 @@ export const usersData: FormInput[] = [
     country: "Brasil",
   },
   {
+    id: "3",
     name: "José",
     city: "Belo Horizonte",
     status: "Inativo",
@@ -80,6 +83,7 @@ export const usersData: FormInput[] = [
     country: "Brasil",
   },
   {
+    id: "4",
     name: "Ana",
     city: "San Diego",
     status: "Ativo",
@@ -94,6 +98,7 @@ export const usersData: FormInput[] = [
     country: "EUA",
   },
   {
+    id: "5",
     name: "Pedro",
     city: "Buenos Aires",
     status: "Inativo",

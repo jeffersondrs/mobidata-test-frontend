@@ -20,7 +20,7 @@ const SearchForm = ({ onSubmit }: SearchFormProps) => {
         type="text"
         name="search"
         placeholder="Pesquisar"
-        className="border border-gray-300 rounded-md p-1 px-2 text-sm min-w-60 focus:ring-1 focus:border-blue-300 focus:outline-none"
+        className="border border-gray-300 rounded-md p-1 px-2 text-sm min-w-60 focus:ring-1 focus:border-gray-300 focus:outline-none"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />

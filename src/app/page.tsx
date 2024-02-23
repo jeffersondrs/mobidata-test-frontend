@@ -21,7 +21,7 @@ export default function Home() {
   const { filteredData } = FilterUser();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start p-10 gap-5">
+    <main className="flex min-h-screen flex-col items-center justify-start p-10 gap-5 bg-gray-300">
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <Form />
       </Modal>
