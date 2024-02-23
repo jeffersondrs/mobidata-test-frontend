@@ -8,7 +8,7 @@ import {
 } from "@/components/";
 import { Plus } from "lucide-react";
 import { useState } from "react";
-import { FilterUser } from "@/hooks/FilterUsers";
+import { FilterUser } from "@/hooks/useFilterUsers";
 import { cities } from "@/utils/utils";
 
 export default function Home() {

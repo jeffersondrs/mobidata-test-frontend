@@ -45,7 +45,7 @@ const Table = ({ users }: UserListProps) => {
                 Nome
               </th>
               <th
-                className="text-left cursor-pointer p-1 bg-gray-600 text-white border-r "
+                className="text-left cursor-pointer p-1 bg-gray-600 text-white border-r"
                 onClick={() => handleSort("email")}
               >
                 Email
@@ -82,27 +82,29 @@ const Table = ({ users }: UserListProps) => {
                 key={index}
                 className={`${
                   index % 2 === 0 ? "bg-gray-100" : "bg-gray-200"
-                } text-left sm:text-sm text-xs `}
+                } text-left sm:text-sm text-xs border`}
               >
-                <td className="p-1 border flex flex-row justify-between items-center">
+                <td className="p-1 flex flex-row justify-between items-center border-r border-gray-400">
                   {user.name}
-                  <Link href={`/profile/${user.name}`} key={index}>
-                    <Search size={14} className="ml-2" />
+                  <Link href={`/profile/${user.id}`} key={index}>
+                    <Search size={12} className="ml-2" />
                   </Link>
                 </td>
-                <td className="p-1 border">{user.email}</td>
+                <td className="p-1 border-r">{user.email}</td>
                 <td
-                  className={
+                  className={`${
                     user.status === "Ativo"
-                      ? "p-1 border text-green-500"
-                      : "p-1 border text-red-500"
+                      ? "p-1  text-green-500"
+                      : "p-1  text-red-500"
                   }
+                  border-r border-gray-400
+                `}
                 >
                   {user.status}
                 </td>
-                <td className="p-1 border">{user.city}</td>
-                <td className="p-1 border">{user.state}</td>
-                <td className="p-1 border">{user.country}</td>
+                <td className="p-1 border-r border-gray-400">{user.city}</td>
+                <td className="p-1 border-r border-gray-400">{user.state}</td>
+                <td className="p-1 border-r border-gray-400">{user.country}</td>
               </tr>
             ))}
           </tbody>

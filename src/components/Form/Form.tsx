@@ -1,42 +1,12 @@
 "use client";
 
 import React from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { FormSchema, FormInput } from "@/utils/schema-zod";
 import { ufCidadesList } from "@/utils/utils";
 import { Button } from "@/components/index";
+import { useSubmitForm } from "@/hooks/useSubmitForm";
 
 export function Form() {
-  const {
-    register,
-    handleSubmit,
-    formState: { isSubmitting, errors },
-  } = useForm({
-    defaultValues: {
-      name: "",
-      email: "",
-      cpf: "",
-      status: "active",
-      city: "",
-      state: "",
-      neighborhood: "",
-      street: "",
-      number: "",
-      complement: "",
-      cep: "",
-      country: "Brasil",
-    },
-    resolver: zodResolver(FormSchema),
-  });
-
-  const onSubmit = (data: FormInput) => {
-    console.log(data);
-
-    // Aqui você pode fazer a chamada para a API
-
-    // Limpa os campos
-  };
+  const { errors, handleSubmit, isSubmitting, onSubmit, register } = useSubmitForm();
 
   return (
     <form
